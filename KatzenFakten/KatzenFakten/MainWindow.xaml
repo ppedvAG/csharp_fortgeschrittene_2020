@@ -9,7 +9,7 @@
     <DockPanel>
         <WrapPanel DockPanel.Dock="Top" Background="AliceBlue">
             <Label>Anzahl:</Label>
-            <Slider IsSnapToTickEnabled="True" VerticalAlignment="Center" Minimum="1" Maximum="20" Name="sl1" Width="100"/>
+            <Slider IsSnapToTickEnabled="True" VerticalAlignment="Center" Minimum="2" Maximum="20" Name="sl1" Width="100"/>
             <TextBlock Text="{Binding ElementName=sl1,Path=Value}" Margin="4" VerticalAlignment="Center"/>
             <Button Click="GetFacts" Margin="4">Get random facts</Button>
         </WrapPanel>

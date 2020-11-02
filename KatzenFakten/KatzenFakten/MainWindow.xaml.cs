@@ -1,4 +1,6 @@
-﻿using System.Net.Http;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Net.Http;
 using System.Windows;
 
 namespace KatzenFakten
@@ -22,6 +24,10 @@ namespace KatzenFakten
             var json = await http.GetStringAsync(url);
 
             jsonTb.Text = json;
+
+            IEnumerable<Fact> result = JsonConvert.DeserializeObject<IEnumerable<Fact>>(json);
+
+            myGrid.ItemsSource = result;
         }
     }
 }
