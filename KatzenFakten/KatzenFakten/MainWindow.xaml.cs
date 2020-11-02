@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Windows;
 
@@ -28,6 +29,8 @@ namespace KatzenFakten
             IEnumerable<Fact> result = JsonConvert.DeserializeObject<IEnumerable<Fact>>(json);
 
             myGrid.ItemsSource = result;
+
+            myLb.ItemsSource = result.Select(x => x.text);
         }
     }
 }
