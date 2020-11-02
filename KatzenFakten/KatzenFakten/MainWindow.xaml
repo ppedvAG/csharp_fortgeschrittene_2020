@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KatzenFakten"
-        mc:Ignorable="d"
+        mc:Ignorable="d" Language="de"
         Title="Katzen Fakten v0.1" Height="450" Width="600">
     <DockPanel>
         <WrapPanel DockPanel.Dock="Top" Background="AliceBlue">
@@ -12,6 +12,9 @@
             <Slider IsSnapToTickEnabled="True" VerticalAlignment="Center" Minimum="2" Maximum="20" Name="sl1" Width="100"/>
             <TextBlock Text="{Binding ElementName=sl1,Path=Value}" Margin="4" VerticalAlignment="Center"/>
             <Button Click="GetFacts" Margin="4">Get random facts</Button>
+            <Button Click="SundayFacts">Get all fact NOT created on Sunday</Button>
+            <Button Click="SundayFactsLambda">Get all fact NOT created on Sunday LAMBDA</Button>
+            <Button Click="FunMitLinq">Fun mit Linq</Button>
         </WrapPanel>
         <StatusBar DockPanel.Dock="Bottom" Height="22" Background="YellowGreen"/>
         <TabControl>
@@ -25,7 +28,6 @@
                             </Border>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
-
                 </ListBox>
             </TabItem>
             <TabItem Header="Grid">
