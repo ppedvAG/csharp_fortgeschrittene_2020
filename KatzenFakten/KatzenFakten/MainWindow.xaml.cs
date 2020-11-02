@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Net.Http;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace KatzenFakten
 {
@@ -23,6 +11,17 @@ namespace KatzenFakten
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private async void GetFacts(object sender, RoutedEventArgs e)
+        {
+            var url = $"https://cat-fact.herokuapp.com/facts/random?amount={sl1.Value}";
+
+            var http = new HttpClient();
+
+            var json = await http.GetStringAsync(url);
+
+            jsonTb.Text = json;
         }
     }
 }

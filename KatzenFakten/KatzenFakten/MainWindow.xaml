@@ -11,7 +11,7 @@
             <Label>Anzahl:</Label>
             <Slider IsSnapToTickEnabled="True" VerticalAlignment="Center" Minimum="1" Maximum="20" Name="sl1" Width="100"/>
             <TextBlock Text="{Binding ElementName=sl1,Path=Value}" Margin="4" VerticalAlignment="Center"/>
-            <Button Margin="4">Get random facts</Button>
+            <Button Click="GetFacts" Margin="4">Get random facts</Button>
         </WrapPanel>
         <StatusBar DockPanel.Dock="Bottom" Height="22" Background="YellowGreen"/>
         <TabControl>
@@ -19,7 +19,7 @@
                 <DataGrid Name="myGrid"/>
             </TabItem>
             <TabItem Header="JSON">
-                <TextBox Name="jsonTb" VerticalScrollBarVisibility="Auto"/>
+                <TextBox TextWrapping="Wrap" Name="jsonTb" VerticalScrollBarVisibility="Auto"/>
             </TabItem>
         </TabControl>
     </DockPanel>
