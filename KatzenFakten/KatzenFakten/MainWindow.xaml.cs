@@ -61,7 +61,17 @@ namespace KatzenFakten
             }
 
             myGrid.ItemsSource = result.Where(f => f.createdAt.DayOfWeek != System.DayOfWeek.Sunday)
-                                       .OrderBy(x => x.createdAt.Month).ThenByDescending(x => x.createdAt.Year);
+                                       .OrderBy(x => x.createdAt.Month)
+                                       .ThenByDescending(x => x.createdAt.Year);
+
+
+
+            //in 2 schritten
+            var query = result.Where(f => f.createdAt.DayOfWeek != System.DayOfWeek.Sunday)
+                              .OrderBy(x => x.createdAt.Month)
+                              .ThenByDescending(x => x.createdAt.Year);
+
+            myGrid.ItemsSource = query.ToList();
 
         }
 
