@@ -10,6 +10,10 @@
         <Button IsEnabled="False" Click="StartOhneThread">Start ohne Threading</Button>
         <Button Click="StartTask">Start Task (Dispatcher)</Button>
         <Button Click="StartTaskMitTS">Start Task (TaskScheduler)</Button>
+        <Button Click="StartAA">Start async/await</Button>
+        <Button Click="CountEmps">Count Employees from DB</Button>
         <ProgressBar Name="pb1" Height="22"/>
+        <Button Click="Abort">Abbrechen</Button>
+        <Button Click="AlteMethode">Gute alte, aber langsame Funktion</Button>
     </StackPanel>
 </Window>
