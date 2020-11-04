@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Windows;
@@ -15,7 +16,7 @@ namespace Beeper.UI
             InitializeComponent();
 
             ////var dateipfad = @"C:\Users\rulan\source\repos\Beeper\Beeper.ConsolenBeep\bin\Debug\Beeper.ConsolenBeep.dll";
-            var dateipfad = @"C:\Users\rulan\source\repos\Beeper\Beeper.SystemBeep\bin\Debug\Beeper.SystemBeep.dll";
+            var dateipfad = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),"Beeper.SystemBeep.dll");
             var ass = Assembly.LoadFrom(dateipfad);
 
             #region mit AutoFac
